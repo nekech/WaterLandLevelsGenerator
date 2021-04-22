@@ -1,0 +1,5 @@
+/home/lab_vauser/My/WaterLandLevelsGenerator/build/CMakeFiles/rebuild_cache.dir
+/home/lab_vauser/My/WaterLandLevelsGenerator/build/CMakeFiles/edit_cache.dir
+/home/lab_vauser/My/WaterLandLevelsGenerator/build/GenerateLevels/CMakeFiles/rebuild_cache.dir
+/home/lab_vauser/My/WaterLandLevelsGenerator/build/GenerateLevels/CMakeFiles/edit_cache.dir
+/home/lab_vauser/My/WaterLandLevelsGenerator/build/GenerateLevels/CMakeFiles/GenerateLevels.dir
