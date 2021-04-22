@@ -1,0 +1,12 @@
+﻿  Game.cpp
+  GenerateLevels.cpp
+  GreedyPlayer.cpp
+  GreedyPlayer2.cpp
+  InteractivePlayer.cpp
+  RandomPlayer.cpp
+  Generating code
+  23 of 208 functions (11.1%) were compiled, the rest were copied from previous compilation.
+    10 functions were new in current compilation
+    10 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  GenerateLevels.vcxproj -> C:\Users\nprotaso\My\Unity\GenerateLevels\GenerateLevels\x64\Release\GenerateLevels.exe

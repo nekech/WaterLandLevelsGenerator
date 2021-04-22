@@ -1,0 +1,16 @@
+﻿  Game.cpp
+  GameCell.cpp
+  GameField.cpp
+  GenerateLevels.cpp
+  GreedyPlayer.cpp
+  GreedyPlayer2.cpp
+  InteractivePlayer.cpp
+  MCTSNode.cpp
+  MCTSPlayer.cpp
+  MCTSTree.cpp
+  MiniMaxModifiedPlayer.cpp
+  MiniMaxPlayer.cpp
+  RandomPlayer.cpp
+  Step.cpp
+  Generating Code...
+  GenerateLevels.vcxproj -> C:\Users\nprotaso\My\Unity\WaterLandLevelsGenerator\x64\Debug\GenerateLevels.exe
