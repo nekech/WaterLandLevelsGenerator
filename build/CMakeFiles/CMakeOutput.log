@@ -231,3 +231,17 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/lab_vauser/My/WaterLandLevelsGenerator/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_81e7c/fast && /usr/bin/make  -f CMakeFiles/cmTC_81e7c.dir/build.make CMakeFiles/cmTC_81e7c.dir/build
+make[1]: Entering directory '/home/lab_vauser/My/WaterLandLevelsGenerator/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_81e7c.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++    -o CMakeFiles/cmTC_81e7c.dir/CheckIncludeFile.cxx.o -c /home/lab_vauser/My/WaterLandLevelsGenerator/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+Linking CXX executable cmTC_81e7c
+/home/lab_vauser/.local/lib/python3.6/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_81e7c.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_81e7c.dir/CheckIncludeFile.cxx.o -o cmTC_81e7c 
+make[1]: Leaving directory '/home/lab_vauser/My/WaterLandLevelsGenerator/build/CMakeFiles/CMakeTmp'
+
+
+

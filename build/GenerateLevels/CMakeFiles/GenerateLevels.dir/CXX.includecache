@@ -10,14 +10,6 @@
 type_traits
 -
 
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/Game.h
-memory
--
-GameField.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/GameField.h
-IPlayer.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/IPlayer.h
-
 /home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/GameCell.h
 EnumBitOperations.h
 /home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/EnumBitOperations.h
@@ -32,41 +24,15 @@ GameCell.h
 Step.h
 /home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/Step.h
 
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/GreedyPlayer.h
-IPlayer.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/IPlayer.h
-
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/IPlayer.h
-GameField.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/GameField.h
-
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/MCTSNode.cpp
-MCTSNode.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/MCTSNode.h
-Game.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/Game.h
-RandomPlayer.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/RandomPlayer.h
-GreedyPlayer.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/GreedyPlayer.h
-
 /home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/MCTSNode.h
 memory
 -
 GameField.h
 /home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/GameField.h
 
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/MCTSPlayer.cpp
-MCTSPlayer.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/MCTSPlayer.h
-MCTSTree.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/MCTSTree.h
-
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/MCTSPlayer.h
-IPlayer.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/IPlayer.h
-
 /home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/MCTSTree.cpp
+cfloat
+-
 iostream
 -
 MCTSTree.h
@@ -77,10 +43,6 @@ chrono
 -
 MCTSNode.h
 /home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/MCTSNode.h
-
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/RandomPlayer.h
-IPlayer.h
-/home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/IPlayer.h
 
 /home/lab_vauser/My/WaterLandLevelsGenerator/GenerateLevels/Step.h
 Vector2.h
