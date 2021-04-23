@@ -1,6 +1,7 @@
 #ifndef MCTS_NODE
 #define MCTS_NODE
 
+#include <memory>
 #include "GameField.h"
 
 namespace MCTS

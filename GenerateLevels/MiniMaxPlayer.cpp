@@ -1,6 +1,7 @@
 #include <functional>
 #include <list>
 #include <thread>
+#include <algorithm>
 
 #include "MiniMaxPlayer.h"
 

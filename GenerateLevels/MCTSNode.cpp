@@ -1,3 +1,6 @@
+#include <cfloat>
+#include <math.h>
+
 #include "MCTSNode.h"
 #include "Game.h"
 #include "RandomPlayer.h"

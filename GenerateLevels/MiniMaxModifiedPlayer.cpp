@@ -3,7 +3,8 @@
 #include <functional>
 #include <list>
 #include <thread>
-
+#include <algorithm>
+#include <cfloat>
 
 MiniMaxModifiedPlayer::MiniMaxModifiedPlayer(CellType playerType, int depth) :IPlayer(playerType), depth(depth)
 {
