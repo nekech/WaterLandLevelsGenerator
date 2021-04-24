@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7FBEA6E4263435D300EF0BA3 /* MCTSTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6E2263435D300EF0BA3 /* MCTSTree.cpp */; };
+		7FBEA6E5263435D300EF0BA3 /* MCTSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6E3263435D300EF0BA3 /* MCTSNode.cpp */; };
+		7FBEA6EF263435F500EF0BA3 /* RandomPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6E7263435F500EF0BA3 /* RandomPlayer.cpp */; };
+		7FBEA6F0263435F500EF0BA3 /* MiniMaxPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6E8263435F500EF0BA3 /* MiniMaxPlayer.cpp */; };
+		7FBEA6F1263435F500EF0BA3 /* InteractivePlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6E9263435F500EF0BA3 /* InteractivePlayer.cpp */; };
+		7FBEA6F2263435F500EF0BA3 /* GreedyPlayer2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6EA263435F500EF0BA3 /* GreedyPlayer2.cpp */; };
+		7FBEA6F3263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6EB263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp */; };
+		7FBEA6F4263435F500EF0BA3 /* GreedyPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6ED263435F500EF0BA3 /* GreedyPlayer.cpp */; };
+		7FBEA6F5263435F500EF0BA3 /* MCTSPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6EE263435F500EF0BA3 /* MCTSPlayer.cpp */; };
+		7FBEA6FC2634360F00EF0BA3 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6F72634360F00EF0BA3 /* Game.cpp */; };
+		7FBEA6FD2634360F00EF0BA3 /* GameField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6F82634360F00EF0BA3 /* GameField.cpp */; };
+		7FBEA6FE2634360F00EF0BA3 /* Step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6F92634360F00EF0BA3 /* Step.cpp */; };
+		7FBEA6FF2634360F00EF0BA3 /* GameCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6FA2634360F00EF0BA3 /* GameCell.cpp */; };
+		7FBEA7002634360F00EF0BA3 /* GenerateLevels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6FB2634360F00EF0BA3 /* GenerateLevels.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7FBEA6B72634175D00EF0BA3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7FBEA6B92634175D00EF0BA3 /* GenerateLevels */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GenerateLevels; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FBEA6E2263435D300EF0BA3 /* MCTSTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCTSTree.cpp; path = ../../../GenerateLevels/MCTSTree.cpp; sourceTree = "<group>"; };
+		7FBEA6E3263435D300EF0BA3 /* MCTSNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCTSNode.cpp; path = ../../../GenerateLevels/MCTSNode.cpp; sourceTree = "<group>"; };
+		7FBEA6E7263435F500EF0BA3 /* RandomPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RandomPlayer.cpp; path = ../../../GenerateLevels/RandomPlayer.cpp; sourceTree = "<group>"; };
+		7FBEA6E8263435F500EF0BA3 /* MiniMaxPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniMaxPlayer.cpp; path = ../../../GenerateLevels/MiniMaxPlayer.cpp; sourceTree = "<group>"; };
+		7FBEA6E9263435F500EF0BA3 /* InteractivePlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InteractivePlayer.cpp; path = ../../../GenerateLevels/InteractivePlayer.cpp; sourceTree = "<group>"; };
+		7FBEA6EA263435F500EF0BA3 /* GreedyPlayer2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GreedyPlayer2.cpp; path = ../../../GenerateLevels/GreedyPlayer2.cpp; sourceTree = "<group>"; };
+		7FBEA6EB263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniMaxModifiedPlayer.cpp; path = ../../../GenerateLevels/MiniMaxModifiedPlayer.cpp; sourceTree = "<group>"; };
+		7FBEA6EC263435F500EF0BA3 /* GameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameCell.h; path = ../../../GenerateLevels/GameCell.h; sourceTree = "<group>"; };
+		7FBEA6ED263435F500EF0BA3 /* GreedyPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GreedyPlayer.cpp; path = ../../../GenerateLevels/GreedyPlayer.cpp; sourceTree = "<group>"; };
+		7FBEA6EE263435F500EF0BA3 /* MCTSPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCTSPlayer.cpp; path = ../../../GenerateLevels/MCTSPlayer.cpp; sourceTree = "<group>"; };
+		7FBEA6F72634360F00EF0BA3 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = ../../../GenerateLevels/Game.cpp; sourceTree = "<group>"; };
+		7FBEA6F82634360F00EF0BA3 /* GameField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameField.cpp; path = ../../../GenerateLevels/GameField.cpp; sourceTree = "<group>"; };
+		7FBEA6F92634360F00EF0BA3 /* Step.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Step.cpp; path = ../../../GenerateLevels/Step.cpp; sourceTree = "<group>"; };
+		7FBEA6FA2634360F00EF0BA3 /* GameCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameCell.cpp; path = ../../../GenerateLevels/GameCell.cpp; sourceTree = "<group>"; };
+		7FBEA6FB2634360F00EF0BA3 /* GenerateLevels.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GenerateLevels.cpp; path = ../../../GenerateLevels/GenerateLevels.cpp; sourceTree = "<group>"; };
+		7FBEA7022634362200EF0BA3 /* MCTSTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTSTree.h; path = ../../../GenerateLevels/MCTSTree.h; sourceTree = "<group>"; };
+		7FBEA7032634362200EF0BA3 /* MCTSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTSNode.h; path = ../../../GenerateLevels/MCTSNode.h; sourceTree = "<group>"; };
+		7FBEA7042634364200EF0BA3 /* IPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPlayer.h; path = ../../../GenerateLevels/IPlayer.h; sourceTree = "<group>"; };
+		7FBEA7052634364200EF0BA3 /* InteractivePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InteractivePlayer.h; path = ../../../GenerateLevels/InteractivePlayer.h; sourceTree = "<group>"; };
+		7FBEA7062634364200EF0BA3 /* MiniMaxModifiedPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniMaxModifiedPlayer.h; path = ../../../GenerateLevels/MiniMaxModifiedPlayer.h; sourceTree = "<group>"; };
+		7FBEA7072634364200EF0BA3 /* GreedyPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GreedyPlayer.h; path = ../../../GenerateLevels/GreedyPlayer.h; sourceTree = "<group>"; };
+		7FBEA7082634364200EF0BA3 /* RandomPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomPlayer.h; path = ../../../GenerateLevels/RandomPlayer.h; sourceTree = "<group>"; };
+		7FBEA7092634364200EF0BA3 /* MiniMaxPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniMaxPlayer.h; path = ../../../GenerateLevels/MiniMaxPlayer.h; sourceTree = "<group>"; };
+		7FBEA70A2634364200EF0BA3 /* MCTSPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTSPlayer.h; path = ../../../GenerateLevels/MCTSPlayer.h; sourceTree = "<group>"; };
+		7FBEA70B2634364200EF0BA3 /* GreedyPlayer2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GreedyPlayer2.h; path = ../../../GenerateLevels/GreedyPlayer2.h; sourceTree = "<group>"; };
+		7FBEA70C2634365500EF0BA3 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Step.h; path = ../../../GenerateLevels/Step.h; sourceTree = "<group>"; };
+		7FBEA70D2634365500EF0BA3 /* EnumBitOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnumBitOperations.h; path = ../../../GenerateLevels/EnumBitOperations.h; sourceTree = "<group>"; };
+		7FBEA70E2634365500EF0BA3 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../../../GenerateLevels/Game.h; sourceTree = "<group>"; };
+		7FBEA70F2634365500EF0BA3 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector2.h; path = ../../../GenerateLevels/Vector2.h; sourceTree = "<group>"; };
+		7FBEA7102634365500EF0BA3 /* GameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameField.h; path = ../../../GenerateLevels/GameField.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FBEA6B62634175D00EF0BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FBEA6B02634175D00EF0BA3 = {
+			isa = PBXGroup;
+			children = (
+				7FBEA6BB2634175D00EF0BA3 /* GenerateLevels */,
+				7FBEA6BA2634175D00EF0BA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7FBEA6BA2634175D00EF0BA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FBEA6B92634175D00EF0BA3 /* GenerateLevels */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FBEA6BB2634175D00EF0BA3 /* GenerateLevels */ = {
+			isa = PBXGroup;
+			children = (
+				7FBEA6DD2634347200EF0BA3 /* sources */,
+				7FBEA6D8263433EC00EF0BA3 /* headers */,
+			);
+			path = GenerateLevels;
+			sourceTree = "<group>";
+		};
+		7FBEA6D8263433EC00EF0BA3 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				7FBEA70D2634365500EF0BA3 /* EnumBitOperations.h */,
+				7FBEA70E2634365500EF0BA3 /* Game.h */,
+				7FBEA7102634365500EF0BA3 /* GameField.h */,
+				7FBEA70C2634365500EF0BA3 /* Step.h */,
+				7FBEA70F2634365500EF0BA3 /* Vector2.h */,
+				7FBEA6DE263434DA00EF0BA3 /* players */,
+			);
+			name = headers;
+			sourceTree = "<group>";
+		};
+		7FBEA6DD2634347200EF0BA3 /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				7FBEA6F72634360F00EF0BA3 /* Game.cpp */,
+				7FBEA6FA2634360F00EF0BA3 /* GameCell.cpp */,
+				7FBEA6F82634360F00EF0BA3 /* GameField.cpp */,
+				7FBEA6FB2634360F00EF0BA3 /* GenerateLevels.cpp */,
+				7FBEA6F92634360F00EF0BA3 /* Step.cpp */,
+				7FBEA6DF263434E500EF0BA3 /* players */,
+			);
+			name = sources;
+			sourceTree = "<group>";
+		};
+		7FBEA6DE263434DA00EF0BA3 /* players */ = {
+			isa = PBXGroup;
+			children = (
+				7FBEA7072634364200EF0BA3 /* GreedyPlayer.h */,
+				7FBEA70B2634364200EF0BA3 /* GreedyPlayer2.h */,
+				7FBEA7052634364200EF0BA3 /* InteractivePlayer.h */,
+				7FBEA7042634364200EF0BA3 /* IPlayer.h */,
+				7FBEA70A2634364200EF0BA3 /* MCTSPlayer.h */,
+				7FBEA7062634364200EF0BA3 /* MiniMaxModifiedPlayer.h */,
+				7FBEA7092634364200EF0BA3 /* MiniMaxPlayer.h */,
+				7FBEA7082634364200EF0BA3 /* RandomPlayer.h */,
+				7FBEA6E02634357B00EF0BA3 /* mcts */,
+			);
+			name = players;
+			sourceTree = "<group>";
+		};
+		7FBEA6DF263434E500EF0BA3 /* players */ = {
+			isa = PBXGroup;
+			children = (
+				7FBEA6EC263435F500EF0BA3 /* GameCell.h */,
+				7FBEA6ED263435F500EF0BA3 /* GreedyPlayer.cpp */,
+				7FBEA6EA263435F500EF0BA3 /* GreedyPlayer2.cpp */,
+				7FBEA6E9263435F500EF0BA3 /* InteractivePlayer.cpp */,
+				7FBEA6EE263435F500EF0BA3 /* MCTSPlayer.cpp */,
+				7FBEA6EB263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp */,
+				7FBEA6E8263435F500EF0BA3 /* MiniMaxPlayer.cpp */,
+				7FBEA6E7263435F500EF0BA3 /* RandomPlayer.cpp */,
+				7FBEA6E12634358600EF0BA3 /* mcts */,
+			);
+			name = players;
+			sourceTree = "<group>";
+		};
+		7FBEA6E02634357B00EF0BA3 /* mcts */ = {
+			isa = PBXGroup;
+			children = (
+				7FBEA7032634362200EF0BA3 /* MCTSNode.h */,
+				7FBEA7022634362200EF0BA3 /* MCTSTree.h */,
+			);
+			name = mcts;
+			sourceTree = "<group>";
+		};
+		7FBEA6E12634358600EF0BA3 /* mcts */ = {
+			isa = PBXGroup;
+			children = (
+				7FBEA6E3263435D300EF0BA3 /* MCTSNode.cpp */,
+				7FBEA6E2263435D300EF0BA3 /* MCTSTree.cpp */,
+			);
+			name = mcts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FBEA6B82634175D00EF0BA3 /* GenerateLevels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FBEA6C02634175D00EF0BA3 /* Build configuration list for PBXNativeTarget "GenerateLevels" */;
+			buildPhases = (
+				7FBEA6B52634175D00EF0BA3 /* Sources */,
+				7FBEA6B62634175D00EF0BA3 /* Frameworks */,
+				7FBEA6B72634175D00EF0BA3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GenerateLevels;
+			productName = GenerateLevels;
+			productReference = 7FBEA6B92634175D00EF0BA3 /* GenerateLevels */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FBEA6B12634175D00EF0BA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					7FBEA6B82634175D00EF0BA3 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 7FBEA6B42634175D00EF0BA3 /* Build configuration list for PBXProject "GenerateLevels" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FBEA6B02634175D00EF0BA3;
+			productRefGroup = 7FBEA6BA2634175D00EF0BA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FBEA6B82634175D00EF0BA3 /* GenerateLevels */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FBEA6B52634175D00EF0BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FBEA7002634360F00EF0BA3 /* GenerateLevels.cpp in Sources */,
+				7FBEA6FD2634360F00EF0BA3 /* GameField.cpp in Sources */,
+				7FBEA6E4263435D300EF0BA3 /* MCTSTree.cpp in Sources */,
+				7FBEA6FE2634360F00EF0BA3 /* Step.cpp in Sources */,
+				7FBEA6FF2634360F00EF0BA3 /* GameCell.cpp in Sources */,
+				7FBEA6E5263435D300EF0BA3 /* MCTSNode.cpp in Sources */,
+				7FBEA6F4263435F500EF0BA3 /* GreedyPlayer.cpp in Sources */,
+				7FBEA6F3263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp in Sources */,
+				7FBEA6F1263435F500EF0BA3 /* InteractivePlayer.cpp in Sources */,
+				7FBEA6EF263435F500EF0BA3 /* RandomPlayer.cpp in Sources */,
+				7FBEA6FC2634360F00EF0BA3 /* Game.cpp in Sources */,
+				7FBEA6F5263435F500EF0BA3 /* MCTSPlayer.cpp in Sources */,
+				7FBEA6F0263435F500EF0BA3 /* MiniMaxPlayer.cpp in Sources */,
+				7FBEA6F2263435F500EF0BA3 /* GreedyPlayer2.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7FBEA6BE2634175D00EF0BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7FBEA6BF2634175D00EF0BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7FBEA6C12634175D00EF0BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7FBEA6C22634175D00EF0BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FBEA6B42634175D00EF0BA3 /* Build configuration list for PBXProject "GenerateLevels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FBEA6BE2634175D00EF0BA3 /* Debug */,
+				7FBEA6BF2634175D00EF0BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FBEA6C02634175D00EF0BA3 /* Build configuration list for PBXNativeTarget "GenerateLevels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FBEA6C12634175D00EF0BA3 /* Debug */,
+				7FBEA6C22634175D00EF0BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7FBEA6B12634175D00EF0BA3 /* Project object */;
+}
