@@ -9,15 +9,18 @@
 class IPlayer
 {
 public:
+    
+    typedef std::function<double(const GameField&, CellType)> ScoreFunction;
+    
 	CellType playerType;
     
-    std::function<double(const GameField&, CellType)> GetScore = DefaultGetScore;
+    ScoreFunction GetScore = DefaultGetScore;
     
     IPlayer(const CellType& playerType) :playerType(playerType)
     {
     }
 
-	IPlayer(const CellType& playerType, std::function<double(const GameField&, CellType)> getScore) :playerType(playerType)
+	IPlayer(const CellType& playerType, ScoreFunction getScore) :playerType(playerType)
 	{
         GetScore = getScore;
 	}

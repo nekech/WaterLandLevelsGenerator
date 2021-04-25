@@ -6,6 +6,10 @@ GreedyPlayer2::GreedyPlayer2(CellType playerType) :IPlayer(playerType)
 {
 }
 
+GreedyPlayer2::GreedyPlayer2(CellType playerType, IPlayer::ScoreFunction scoreFunction):IPlayer(playerType, scoreFunction)
+{
+}
+
 Step GreedyPlayer2::GetStep(const GameField& field)
 {
 	GreedyPlayer currentPlayer(playerType);

@@ -9,6 +9,8 @@ class GreedyPlayer2 : public IPlayer
 public:
 
 	GreedyPlayer2(CellType playerType);
+    
+    GreedyPlayer2(CellType playerType, IPlayer::ScoreFunction scoreFunction);
 
 	Step GetStep(const GameField& field);
 };

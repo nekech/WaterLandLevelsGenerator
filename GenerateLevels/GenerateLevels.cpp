@@ -102,6 +102,13 @@ void DebugMiniMax()
     GetStatistic(1, field, greedy2Player, minimaxPlayer, CellType::WATER, true, true);
 }
 
+double DifferenceScoreFunction(const GameField& field, CellType playerType)
+{
+    CellType opponentType = playerType == CellType::WATER ? CellType::LAND : CellType::WATER;
+    
+    return field.GetCellTypeCount(playerType) - field.GetCellTypeCount(opponentType);
+}
+
 int main()
 {
     std::cout << "Hello World!\n";
@@ -113,7 +120,7 @@ int main()
     field.SetCell(5, 4, CellType::ROCK | CellType::ICE);
 
     shared_ptr<IPlayer> greedyPlayer(new GreedyPlayer(CellType::LAND));
-    shared_ptr<IPlayer> greedy2Player(new GreedyPlayer2(CellType::LAND));
+    shared_ptr<IPlayer> greedy2Player(new GreedyPlayer2(CellType::LAND, DifferenceScoreFunction));
     shared_ptr<IPlayer> minimaxPlayer(new MiniMaxPlayer(CellType::WATER, 3));
     shared_ptr<IPlayer> mctsPlayer(new MCTSPlayer(CellType::WATER));
     shared_ptr<IPlayer> interactivePlayer(new InteractivePlayer(CellType::WATER));

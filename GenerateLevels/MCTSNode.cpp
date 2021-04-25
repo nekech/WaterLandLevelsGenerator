@@ -129,7 +129,7 @@ double Node::GetUCTScore(int totalVisitCount)
 {
     if (visitCount == 0)
     {
-        return field.m_width*field.m_height; //TODO replace with constant
+        return DBL_MAX; //TODO replace with constant
     }
 
     return (winScore / (double)visitCount) + 1.41 * sqrt(log(totalVisitCount) / (double)visitCount);

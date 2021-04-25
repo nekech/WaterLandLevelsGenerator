@@ -48,7 +48,7 @@ void Tree::BackPropogation(shared_ptr<Node> node, CellType winner)
     
     if (node->isTerminal)
     {
-        updateScore = 1000;
+        updateScore = DBL_MAX;
     }
 
 	while (updateNode != nullptr)
