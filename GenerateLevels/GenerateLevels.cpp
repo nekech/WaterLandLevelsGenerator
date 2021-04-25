@@ -51,6 +51,11 @@ RunStatistic GetStatistic(int samplesCount, const GameField& field, shared_ptr<I
         {
            res.DeadHeatCount++;
         }
+        
+        if (printStatistic)
+        {
+            std::cout<<"Game number: "<<i<<" Winner: "<<(winner == CellType::WATER ? "water" : "land")<<std::endl;
+        }
     }
 
     if (printStatistic)
@@ -120,14 +125,15 @@ int main()
     field.SetCell(5, 4, CellType::ROCK | CellType::ICE);
 
     shared_ptr<IPlayer> greedyPlayer(new GreedyPlayer(CellType::LAND));
-    shared_ptr<IPlayer> greedy2Player(new GreedyPlayer2(CellType::LAND, DifferenceScoreFunction));
+    shared_ptr<IPlayer> greedy2Player(new GreedyPlayer2(CellType::LAND));
     shared_ptr<IPlayer> minimaxPlayer(new MiniMaxPlayer(CellType::WATER, 3));
     shared_ptr<IPlayer> mctsPlayer(new MCTSPlayer(CellType::WATER));
     shared_ptr<IPlayer> interactivePlayer(new InteractivePlayer(CellType::WATER));
+    shared_ptr<IPlayer> greedy2DifferPlayer(new GreedyPlayer2(CellType::WATER, DifferenceScoreFunction));
 
     //RunInteractiveGame(field, CellType::LAND, interactivePlayer);
     
-    GetStatistic(1, field, greedy2Player, mctsPlayer, CellType::WATER, true, true);
+    GetStatistic(10, field, greedy2Player, greedy2DifferPlayer, CellType::WATER, true, false);
     
     //DebugMiniMax();
 }
