@@ -12,6 +12,8 @@ namespace MCTS
 	{
 	public:
 		shared_ptr<Node> root;
+        
+        int totalVisitCount = 0;
 
 		std::chrono::duration<int> duration;
 
@@ -21,13 +23,11 @@ namespace MCTS
 
 		Step FindNextMove();
 
-		shared_ptr<Node> FindBestNodeWithUCT(shared_ptr<Node> node);
-
 		void ExpandNode(shared_ptr<Node> node);
 
 		void BackPropogation(shared_ptr<Node> node, CellType winner);
-
-		shared_ptr<Node> SelectPromisingNode();
+        
+        shared_ptr<Node> Select(shared_ptr<Node> node);
 	};
 }
 

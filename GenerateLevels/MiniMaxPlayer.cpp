@@ -53,7 +53,7 @@ double MiniMaxPlayer::GetStepScore(const GameField& field, int currentDepth, boo
 {
 	if (field.IsEnd() || currentDepth <= 0)
 	{
-		return GetScore(field);
+		return GetScore(field, currentPlayer);
 	}
 	
 	auto steps = field.GetAllPossibleSteps(currentPlayer);
@@ -96,11 +96,6 @@ double MiniMaxPlayer::GetStepScore(const GameField& field, int currentDepth, boo
 	}
 
 	return bestScore;
-}
-
-double MiniMaxPlayer::GetScore(const GameField& field)
-{
-	return field.GetCellTypeCount(playerType);
 }
 
 void MiniMaxPlayer::ReduceSameSteps(std::list<Step>& steps)

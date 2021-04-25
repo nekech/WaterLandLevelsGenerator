@@ -11,7 +11,7 @@ Step GreedyPlayer::GetStep(const GameField& field)
 	auto possibleSteps = field.GetAllPossibleSteps(playerType);
 
 	std::vector<Step> maxSteps;
-	int maxCount = 0;
+	double maxScore = 0;
 
 	for (auto step : possibleSteps)
 	{
@@ -19,19 +19,19 @@ Step GreedyPlayer::GetStep(const GameField& field)
 
 		tmpField.MakeMove(step);
 
-		int count = tmpField.GetCellTypeCount(playerType);
+        double score = GetScore(tmpField, playerType);
 
-		if (count == maxCount)
+		if (score == maxScore)
 		{
 			maxSteps.push_back(step);
 		}
 
-		if (count > maxCount)
+		if (score > maxScore)
 		{
 			maxSteps.clear();
 			maxSteps.push_back(step);
 
-			maxCount = count;
+			maxScore = score;
 		}
 	}
 

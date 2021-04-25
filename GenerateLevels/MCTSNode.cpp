@@ -14,6 +14,11 @@ Node::Node(shared_ptr<Node> parent, const GameField& field, Step step, CellType 
 	if (parent != nullptr)
 	{
 		this->field.MakeMove(step);
+        
+        if (field.IsEnd())
+        {
+            isTerminal = true;
+        }
 	}
 
 	opponentType = playerType == CellType::WATER ? CellType::LAND : CellType::WATER;
@@ -31,6 +36,18 @@ void Node::ComputeChilds()
 
 CellType Node::SimulateRandomPlayout()
 {
+    if (isTerminal)
+    {
+        if (field.GetCellTypeCount(playerType) > field.GetCellTypeCount(opponentType))
+        {
+            return playerType;
+        }
+        else
+        {
+            return opponentType;
+        }
+    }
+    
 	GameField tmpField(field);
 
 	shared_ptr<IPlayer> player1(new RandomPlayer(playerType));
@@ -45,7 +62,7 @@ CellType Node::SimulateRandomPlayout()
 
 	if (randomGame.GetWinner() == opponentType)
 	{
-		winScore = DBL_MIN;
+		//winScore = DBL_MIN;
 	}
 
 	return randomGame.GetWinner();
@@ -63,8 +80,8 @@ double Node::ComputeNodeUCT(int totalVisit)
 
 std::shared_ptr<Node> Node::GetChildWithBestWinScore()
 {
-	double maxWinScore = DBL_MIN;
-	shared_ptr<Node> maxNode = nullptr;
+	double maxWinScore = childs.front()->winScore;
+	shared_ptr<Node> maxNode = childs.front();
 
 	for (auto child : childs)
 	{
@@ -100,8 +117,21 @@ std::shared_ptr<Node> Node::GetRandomChildNode()
 	return nullptr;
 }
 
-void Node::UpdateWinScore()
+void Node::UpdateWinScore(CellType winner, double updateScore)
 {
-	winScore += 10;
+    if (winner == playerType)
+        winScore += updateScore;
+    else
+        winScore -= updateScore;
+}
+
+double Node::GetUCTScore(int totalVisitCount)
+{
+    if (visitCount == 0)
+    {
+        return field.m_width*field.m_height; //TODO replace with constant
+    }
+
+    return (winScore / (double)visitCount) + 1.41 * sqrt(log(totalVisitCount) / (double)visitCount);
 }
 

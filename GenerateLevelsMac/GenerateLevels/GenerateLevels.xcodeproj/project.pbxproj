@@ -13,7 +13,6 @@
 		7FBEA6F0263435F500EF0BA3 /* MiniMaxPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6E8263435F500EF0BA3 /* MiniMaxPlayer.cpp */; };
 		7FBEA6F1263435F500EF0BA3 /* InteractivePlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6E9263435F500EF0BA3 /* InteractivePlayer.cpp */; };
 		7FBEA6F2263435F500EF0BA3 /* GreedyPlayer2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6EA263435F500EF0BA3 /* GreedyPlayer2.cpp */; };
-		7FBEA6F3263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6EB263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp */; };
 		7FBEA6F4263435F500EF0BA3 /* GreedyPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6ED263435F500EF0BA3 /* GreedyPlayer.cpp */; };
 		7FBEA6F5263435F500EF0BA3 /* MCTSPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6EE263435F500EF0BA3 /* MCTSPlayer.cpp */; };
 		7FBEA6FC2634360F00EF0BA3 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6F72634360F00EF0BA3 /* Game.cpp */; };
@@ -43,7 +42,6 @@
 		7FBEA6E8263435F500EF0BA3 /* MiniMaxPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniMaxPlayer.cpp; path = ../../../GenerateLevels/MiniMaxPlayer.cpp; sourceTree = "<group>"; };
 		7FBEA6E9263435F500EF0BA3 /* InteractivePlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InteractivePlayer.cpp; path = ../../../GenerateLevels/InteractivePlayer.cpp; sourceTree = "<group>"; };
 		7FBEA6EA263435F500EF0BA3 /* GreedyPlayer2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GreedyPlayer2.cpp; path = ../../../GenerateLevels/GreedyPlayer2.cpp; sourceTree = "<group>"; };
-		7FBEA6EB263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniMaxModifiedPlayer.cpp; path = ../../../GenerateLevels/MiniMaxModifiedPlayer.cpp; sourceTree = "<group>"; };
 		7FBEA6EC263435F500EF0BA3 /* GameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameCell.h; path = ../../../GenerateLevels/GameCell.h; sourceTree = "<group>"; };
 		7FBEA6ED263435F500EF0BA3 /* GreedyPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GreedyPlayer.cpp; path = ../../../GenerateLevels/GreedyPlayer.cpp; sourceTree = "<group>"; };
 		7FBEA6EE263435F500EF0BA3 /* MCTSPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCTSPlayer.cpp; path = ../../../GenerateLevels/MCTSPlayer.cpp; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 		7FBEA7032634362200EF0BA3 /* MCTSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTSNode.h; path = ../../../GenerateLevels/MCTSNode.h; sourceTree = "<group>"; };
 		7FBEA7042634364200EF0BA3 /* IPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPlayer.h; path = ../../../GenerateLevels/IPlayer.h; sourceTree = "<group>"; };
 		7FBEA7052634364200EF0BA3 /* InteractivePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InteractivePlayer.h; path = ../../../GenerateLevels/InteractivePlayer.h; sourceTree = "<group>"; };
-		7FBEA7062634364200EF0BA3 /* MiniMaxModifiedPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniMaxModifiedPlayer.h; path = ../../../GenerateLevels/MiniMaxModifiedPlayer.h; sourceTree = "<group>"; };
 		7FBEA7072634364200EF0BA3 /* GreedyPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GreedyPlayer.h; path = ../../../GenerateLevels/GreedyPlayer.h; sourceTree = "<group>"; };
 		7FBEA7082634364200EF0BA3 /* RandomPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomPlayer.h; path = ../../../GenerateLevels/RandomPlayer.h; sourceTree = "<group>"; };
 		7FBEA7092634364200EF0BA3 /* MiniMaxPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniMaxPlayer.h; path = ../../../GenerateLevels/MiniMaxPlayer.h; sourceTree = "<group>"; };
@@ -139,7 +136,6 @@
 				7FBEA7052634364200EF0BA3 /* InteractivePlayer.h */,
 				7FBEA7042634364200EF0BA3 /* IPlayer.h */,
 				7FBEA70A2634364200EF0BA3 /* MCTSPlayer.h */,
-				7FBEA7062634364200EF0BA3 /* MiniMaxModifiedPlayer.h */,
 				7FBEA7092634364200EF0BA3 /* MiniMaxPlayer.h */,
 				7FBEA7082634364200EF0BA3 /* RandomPlayer.h */,
 				7FBEA6E02634357B00EF0BA3 /* mcts */,
@@ -155,7 +151,6 @@
 				7FBEA6EA263435F500EF0BA3 /* GreedyPlayer2.cpp */,
 				7FBEA6E9263435F500EF0BA3 /* InteractivePlayer.cpp */,
 				7FBEA6EE263435F500EF0BA3 /* MCTSPlayer.cpp */,
-				7FBEA6EB263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp */,
 				7FBEA6E8263435F500EF0BA3 /* MiniMaxPlayer.cpp */,
 				7FBEA6E7263435F500EF0BA3 /* RandomPlayer.cpp */,
 				7FBEA6E12634358600EF0BA3 /* mcts */,
@@ -244,7 +239,6 @@
 				7FBEA6FF2634360F00EF0BA3 /* GameCell.cpp in Sources */,
 				7FBEA6E5263435D300EF0BA3 /* MCTSNode.cpp in Sources */,
 				7FBEA6F4263435F500EF0BA3 /* GreedyPlayer.cpp in Sources */,
-				7FBEA6F3263435F500EF0BA3 /* MiniMaxModifiedPlayer.cpp in Sources */,
 				7FBEA6F1263435F500EF0BA3 /* InteractivePlayer.cpp in Sources */,
 				7FBEA6EF263435F500EF0BA3 /* RandomPlayer.cpp in Sources */,
 				7FBEA6FC2634360F00EF0BA3 /* Game.cpp in Sources */,

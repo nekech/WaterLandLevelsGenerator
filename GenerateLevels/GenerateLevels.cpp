@@ -115,12 +115,12 @@ int main()
     shared_ptr<IPlayer> greedyPlayer(new GreedyPlayer(CellType::LAND));
     shared_ptr<IPlayer> greedy2Player(new GreedyPlayer2(CellType::LAND));
     shared_ptr<IPlayer> minimaxPlayer(new MiniMaxPlayer(CellType::WATER, 3));
-    shared_ptr<IPlayer> mctsPlayer(new MCTSPlayer(CellType::LAND));
+    shared_ptr<IPlayer> mctsPlayer(new MCTSPlayer(CellType::WATER));
     shared_ptr<IPlayer> interactivePlayer(new InteractivePlayer(CellType::WATER));
 
-    RunInteractiveGame(field, CellType::LAND, interactivePlayer);
+    //RunInteractiveGame(field, CellType::LAND, interactivePlayer);
     
-   // GetStatistic(30, field, greedy2Player, minimaxPlayer, CellType::LAND, true, false);
+    GetStatistic(1, field, greedy2Player, mctsPlayer, CellType::WATER, true, true);
     
     //DebugMiniMax();
 }

@@ -19,8 +19,6 @@ public:
 
 	void ReduceSameSteps(std::list<Step>& steps);
 
-	double GetScore(const GameField& field);
-
 	Step ChooseRandomStep(const std::list<Step>& steps);
 };
 

@@ -18,9 +18,11 @@ namespace MCTS
 		CellType playerType;
 		CellType opponentType;
 
-		int visitCount;
+		int visitCount = 0;
 
-		double winScore;
+		double winScore = 0;
+        
+        bool isTerminal = false;
 
 		std::weak_ptr<Node> parent;
 
@@ -37,8 +39,10 @@ namespace MCTS
 		shared_ptr<Node> GetChildWithBestWinScore();
 
 		shared_ptr<Node> GetRandomChildNode();
+        
+        double GetUCTScore(int totalVisitCount);
 
-		void UpdateWinScore();
+		void UpdateWinScore(CellType winner, double updateScore = 1);
 	};
 }
 
