@@ -6,6 +6,8 @@
 #include <tuple>
 #include <chrono>
 
+#include "ThreadPool.h"
+
 #include "GameField.h"
 #include "Game.h"
 #include "IPlayer.h"
@@ -29,6 +31,10 @@ struct RunStatistic
 RunStatistic GetStatistic(int samplesCount, const GameField& field, shared_ptr<IPlayer> player1, shared_ptr<IPlayer> player2, CellType firstPlayer, bool printStatistic = false, bool debug = false)
 {
     RunStatistic res;
+    
+    int threadsCount = std::thread::hardware_concurrency();
+    if (threadsCount == 0)
+        threadsCount = 2;
 
     auto t0 = std::chrono::high_resolution_clock::now();
 
@@ -52,7 +58,7 @@ RunStatistic GetStatistic(int samplesCount, const GameField& field, shared_ptr<I
            res.DeadHeatCount++;
         }
         
-        if (printStatistic)
+        if (printStatistic && false)
         {
             std::cout<<"Game number: "<<i<<" Winner: "<<(winner == CellType::WATER ? "water" : "land")<<std::endl;
         }
@@ -66,6 +72,87 @@ RunStatistic GetStatistic(int samplesCount, const GameField& field, shared_ptr<I
     }
 
     return res;
+}
+
+void GetStatisticAsync(int samplesCount, const GameField& field, shared_ptr<IPlayer> player1, shared_ptr<IPlayer> player2, CellType firstPlayer, bool printStatistic = false, bool debug = false)
+{
+    int threadsCount = std::thread::hardware_concurrency();
+    if (threadsCount == 0)
+        threadsCount = 2;
+    
+    ThreadPool pool(threadsCount);
+    std::vector< std::future<CellType> > results;
+    
+    auto t0 = std::chrono::high_resolution_clock::now();
+    
+    for (int i = 0; i < samplesCount; ++i)
+    {
+        results.emplace_back(pool.enqueue([field, firstPlayer, player1, player2, debug]
+        {
+            Game game(field, firstPlayer, player1, player2);
+            game.Start(debug);
+            
+            return game.GetWinner();
+        }));
+    }
+    
+    RunStatistic res;
+    
+    for(auto && result: results)
+    {
+        CellType winner = result.get();
+        
+        if (winner == CellType::WATER)
+        {
+            res.WaterWinCount++;
+        }
+        if (winner == CellType::LAND)
+        {
+            res.LandWinCount ++;
+        }
+
+        if (winner == CellType::ICE)
+        {
+           res.DeadHeatCount++;
+        }
+    }
+    
+    if (printStatistic)
+    {
+        auto t1 = std::chrono::high_resolution_clock::now();
+        std::cout << "Water: " << res.WaterWinCount << " | " << "Land: " << res.LandWinCount << " | " << "Dead Heat: " << res.DeadHeatCount << std::endl;
+        std::cout << "duration: " << std::chrono::duration_cast<std::chrono::seconds>(t1 - t0).count() << std::endl;
+    }
+    
+}
+
+void test()
+{
+    ThreadPool pool(4);
+        std::vector< std::future<int> > results;
+
+        for(int i = 0; i < 8; ++i) {
+            results.emplace_back(
+                pool.enqueue([i] {
+                    std::cout << "hello " << i << std::endl;
+                    std::this_thread::sleep_for(std::chrono::seconds(10));
+                    std::cout << "world " << i << std::endl;
+                    return i*i;
+                })
+            );
+        }
+    
+    int sum = 0;
+
+        for(auto && result: results)
+        {
+            int val =result.get();
+            std::cout << val<< ' ';
+            sum += val;
+        }
+        std::cout << std::endl;
+    
+    std::cout<<"Sum: "<<sum<<std::endl;
 }
 
 void RunInteractiveGame(const GameField& field, CellType firstPlayer, shared_ptr<IPlayer> aiPlayer)
@@ -124,17 +211,18 @@ int main()
     field.SetCell(0, 1, CellType::CAVITY | CellType::ICE);
     field.SetCell(5, 4, CellType::ROCK | CellType::ICE);
 
-    shared_ptr<IPlayer> greedyPlayer(new GreedyPlayer(CellType::LAND));
+    shared_ptr<IPlayer> greedyPlayer(new GreedyPlayer(CellType::WATER));
     shared_ptr<IPlayer> greedy2Player(new GreedyPlayer2(CellType::LAND));
-    shared_ptr<IPlayer> minimaxPlayer(new MiniMaxPlayer(CellType::WATER, 3));
-    shared_ptr<IPlayer> mctsPlayer(new MCTSPlayer(CellType::WATER));
+    shared_ptr<IPlayer> minimaxPlayer(new MiniMaxPlayer(CellType::WATER, 2));
+    shared_ptr<IPlayer> mctsPlayer(new MCTSPlayer(CellType::WATER, std::chrono::duration<int>(10)));
     shared_ptr<IPlayer> interactivePlayer(new InteractivePlayer(CellType::WATER));
     shared_ptr<IPlayer> greedy2DifferPlayer(new GreedyPlayer2(CellType::WATER, DifferenceScoreFunction));
 
     //RunInteractiveGame(field, CellType::LAND, interactivePlayer);
     
-    GetStatistic(10, field, greedy2Player, greedy2DifferPlayer, CellType::WATER, true, false);
-    
+    GetStatistic(10, field, greedy2Player, minimaxPlayer, CellType::WATER, true, false);
+    GetStatisticAsync(10, field, greedy2Player, minimaxPlayer, CellType::WATER, true, false);
+    //test();
     //DebugMiniMax();
 }
 

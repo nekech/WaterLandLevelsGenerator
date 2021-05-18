@@ -62,10 +62,74 @@
             filePath = "../../GenerateLevels/GenerateLevels.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "DifferenceScoreFunction(field, playerType)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4B31FF4-F155-4853-A53D-24D83CE497BF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../GenerateLevels/GenerateLevels.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "GetStatisticAsync(samplesCount, field, player1, player2, firstPlayer)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02AB4435-2A89-4B2D-842C-8D7F01C74F47"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../GenerateLevels/GenerateLevels.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "GetStatisticAsync(samplesCount, field, player1, player2, firstPlayer)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "02AB4435-2A89-4B2D-842C-8D7F01C74F47 - f871fc72045f315b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GetStatisticAsync(int, GameField const&amp;, std::__1::shared_ptr&lt;IPlayer&gt;, std::__1::shared_ptr&lt;IPlayer&gt;, CellType, bool, bool)"
+                  moduleName = "GenerateLevels"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nprotasov/work/games/water-and-land/WaterLandLevelsGenerator/GenerateLevels/GenerateLevels.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "368">
+               </Location>
+               <Location
+                  uuid = "02AB4435-2A89-4B2D-842C-8D7F01C74F47 - f871fc72045f315b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GetStatisticAsync(int, GameField const&amp;, std::__1::shared_ptr&lt;IPlayer&gt;, std::__1::shared_ptr&lt;IPlayer&gt;, CellType, bool, bool)"
+                  moduleName = "GenerateLevels"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nprotasov/work/games/water-and-land/WaterLandLevelsGenerator/GenerateLevels/GenerateLevels.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "424">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

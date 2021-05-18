@@ -151,7 +151,6 @@
     <ClCompile Include="MCTSNode.cpp" />
     <ClCompile Include="MCTSPlayer.cpp" />
     <ClCompile Include="MCTSTree.cpp" />
-    <ClCompile Include="MiniMaxModifiedPlayer.cpp" />
     <ClCompile Include="MiniMaxPlayer.cpp" />
     <ClCompile Include="RandomPlayer.cpp" />
     <ClCompile Include="Step.cpp" />
@@ -168,7 +167,6 @@
     <ClInclude Include="MCTSNode.h" />
     <ClInclude Include="MCTSPlayer.h" />
     <ClInclude Include="MCTSTree.h" />
-    <ClInclude Include="MiniMaxModifiedPlayer.h" />
     <ClInclude Include="MiniMaxPlayer.h" />
     <ClInclude Include="RandomPlayer.h" />
     <ClInclude Include="Step.h" />

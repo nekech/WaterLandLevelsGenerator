@@ -91,7 +91,7 @@ shared_ptr<Node> Tree::Select(shared_ptr<Node> node)
         }
     }
     
-    if (bestNode->visitCount > 0)
+        if (bestNode->visitCount > 0)
     {
         return Select(bestNode);
     }
