@@ -21,13 +21,15 @@ namespace MCTS
 
 		Tree(const GameField& field, CellType playerType, std::chrono::duration<int> duration = std::chrono::seconds(60));
 
-		Step FindNextMove();
+		Step GetStep();
 
 		void ExpandNode(shared_ptr<Node> node);
 
-		void BackPropogation(shared_ptr<Node> node, CellType winner);
+		void BackPropogation(shared_ptr<Node> node, GameResult result);
         
-        shared_ptr<Node> Select(shared_ptr<Node> node);
+        shared_ptr<Node> Select(shared_ptr<Node> node, int currentDepth = 0);
+        
+        int maxDepth = 0;
 	};
 }
 

@@ -9,5 +9,5 @@ MCTSPlayer::MCTSPlayer(CellType playerType, std::chrono::duration<int> duration)
 Step MCTSPlayer::GetStep(const GameField& field)
 {
 	MCTS::Tree tree(field, playerType, duration);
-	return tree.FindNextMove();
+	return tree.GetStep();
 }

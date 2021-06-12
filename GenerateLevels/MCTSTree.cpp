@@ -6,12 +6,14 @@ using namespace MCTS;
 
 Tree::Tree(const GameField& field, CellType playerType, std::chrono::duration<int> duration) : playerType(playerType), duration(duration)
 {
-	root = std::make_shared<Node>(nullptr, field, Step(), playerType);
+	root = std::make_shared<Node>(nullptr, field, Step(), playerType, playerType);
 }
 
 
-Step Tree::FindNextMove()
+Step Tree::GetStep()
 {
+    maxDepth = 0;
+    
 	std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
 	std::chrono::system_clock::time_point current = std::chrono::system_clock::now();
 
@@ -21,7 +23,10 @@ Step Tree::FindNextMove()
     {
         shared_ptr<Node> selectedNode = Select(root);
         
-        CellType simulationResult = selectedNode->SimulateRandomPlayout();
+        if (selectedNode == nullptr)
+            break;
+        
+        GameResult simulationResult = selectedNode->RandomPlayout();
         totalVisitCount++;
         
         BackPropogation(selectedNode, simulationResult);
@@ -31,8 +36,9 @@ Step Tree::FindNextMove()
 	}
 
 	std::cout << "Itteration count: " << iterationCount << std::endl;
+    std::cout << "Max Depth: " << maxDepth << std::endl;
 
-	return root->GetChildWithBestWinScore()->step;
+	return root->GetChildWithBestUCTScore(totalVisitCount)->step;
 }
 
 void Tree::ExpandNode(shared_ptr<Node> node)
@@ -40,30 +46,28 @@ void Tree::ExpandNode(shared_ptr<Node> node)
 	node->ComputeChilds();
 }
 
-void Tree::BackPropogation(shared_ptr<Node> node, CellType winner)
+void Tree::BackPropogation(shared_ptr<Node> node, GameResult simulationResult)
 {
 	shared_ptr<Node> updateNode = node;
-    
-    double updateScore = 1;
-    
-    if (node->isTerminal)
-    {
-        updateScore = DBL_MAX;
-    }
 
 	while (updateNode != nullptr)
 	{
 		updateNode->visitCount++;
 
-        updateNode->UpdateWinScore(winner, updateScore);
+        updateNode->UpdateWinScore(simulationResult);
 
 		updateNode = updateNode->parent.lock();
 	}
 }
 
-shared_ptr<Node> Tree::Select(shared_ptr<Node> node)
+shared_ptr<Node> Tree::Select(shared_ptr<Node> node, int currentDepth)
 {
-    if (node->field.IsEnd())
+    if (currentDepth > maxDepth)
+    {
+        maxDepth = currentDepth;
+    }
+    
+    if (node->field.IsEnd() || node->visitCount == 0)
     {
         return node;
     }
@@ -75,26 +79,18 @@ shared_ptr<Node> Tree::Select(shared_ptr<Node> node)
         return node->GetRandomChildNode();
     }
     
-    double bestScore = -1;
+    double bestScore = -DBL_MAX;
     
-    shared_ptr<Node> bestNode = nullptr;
+    std::function<bool(double, double)> compareFunction = [](double a, double b) {return a > b; };
     
-    for (auto child : node->childs)
+    if (node->nodePlayerType != playerType)
     {
-        double childScore = child->GetUCTScore(totalVisitCount);
+        bestScore = DBL_MAX;
         
-        if (childScore > bestScore)
-        {
-            bestNode = child;
-            
-            bestScore = childScore;
-        }
+        compareFunction = [](double a, double b) { return a < b; };
     }
     
-        if (bestNode->visitCount > 0)
-    {
-        return Select(bestNode);
-    }
+    shared_ptr<Node> bestNode = node->GetChildWithBestUCTScore(totalVisitCount, bestScore, compareFunction);
     
-    return bestNode;
+    return Select(bestNode, currentDepth + 1);
 }

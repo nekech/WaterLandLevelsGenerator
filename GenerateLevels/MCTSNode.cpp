@@ -8,7 +8,7 @@
 
 using namespace MCTS;
 
-Node::Node(shared_ptr<Node> parent, const GameField& field, Step step, CellType playerType):  field(field), step(step), playerType(playerType), visitCount(0), winScore(0)
+Node::Node(shared_ptr<Node> parent, const GameField& field, Step step, CellType nodePlayerType, CellType playerType):  field(field), step(step), nodePlayerType(nodePlayerType), visitCount(0), winScore(0), playerType(playerType)
 {
 	this->parent = parent;
 	if (parent != nullptr)
@@ -21,61 +21,46 @@ Node::Node(shared_ptr<Node> parent, const GameField& field, Step step, CellType 
         }
 	}
 
-	opponentType = playerType == CellType::WATER ? CellType::LAND : CellType::WATER;
+	nodeOpponentType = nodePlayerType == CellType::WATER ? CellType::LAND : CellType::WATER;
 }
 
 void Node::ComputeChilds()
 {
-	auto possibleSteps = field.GetAllPossibleSteps(playerType);
+	auto possibleSteps = field.GetAllPossibleSteps(nodePlayerType);
 
 	for (auto possibleStep : possibleSteps)
 	{
-		childs.push_back(std::make_shared<Node>(shared_from_this(), field, possibleStep, opponentType)); //TODO debug pointer logic
+		childs.push_back(std::make_shared<Node>(shared_from_this(), field, possibleStep, nodeOpponentType, playerType)); //TODO debug pointer logic
 	}
 }
 
-CellType Node::SimulateRandomPlayout()
+GameResult Node::RandomPlayout()
 {
+    GameResult result;
+    
     if (isTerminal)
     {
-        if (field.GetCellTypeCount(playerType) > field.GetCellTypeCount(opponentType))
-        {
-            return playerType;
-        }
-        else
-        {
-            return opponentType;
-        }
+        result.WaterCount = field.GetCellTypeCount(CellType::WATER);
+        result.LandCount = field.GetCellTypeCount(CellType::LAND);
+        return result;
     }
     
 	GameField tmpField(field);
 
-	shared_ptr<IPlayer> player1(new RandomPlayer(playerType));
-	shared_ptr<IPlayer> player2(new RandomPlayer(opponentType));
-	//shared_ptr<IPlayer> player1(new GreedyPlayer(playerType));
-	//shared_ptr<IPlayer> player2(new GreedyPlayer(opponentType));
+	shared_ptr<IPlayer> player1(new RandomPlayer(nodePlayerType));
+	shared_ptr<IPlayer> player2(new RandomPlayer(nodeOpponentType));
+//	shared_ptr<IPlayer> player1(new GreedyPlayer(nodePlayerType));
+//	shared_ptr<IPlayer> player2(new GreedyPlayer(nodeOpponentType));
 
 
-	Game randomGame(field, playerType, player1, player2);
+	Game randomGame(tmpField, nodePlayerType, player1, player2);
 
 	randomGame.Start();
-
-	if (randomGame.GetWinner() == opponentType)
-	{
-		//winScore = DBL_MIN;
-	}
-
-	return randomGame.GetWinner();
-}
-
-double Node::ComputeNodeUCT(int totalVisit)
-{
-	if (visitCount == 0)
-	{
-		return DBL_MAX;
-	}
-
-	return (winScore / (double)visitCount) + 1.41 * sqrt(log(totalVisit) / (double)visitCount);
+	
+    result.WaterCount = field.GetCellTypeCount(CellType::WATER);
+    result.LandCount = field.GetCellTypeCount(CellType::LAND);
+    
+    return result;
 }
 
 std::shared_ptr<Node> Node::GetChildWithBestWinScore()
@@ -93,6 +78,77 @@ std::shared_ptr<Node> Node::GetChildWithBestWinScore()
 	}
 
 	return maxNode;
+}
+
+std::shared_ptr<Node> Node::GetChildWithBestUCTScore(int totalVisitCount)
+{
+    double maxUTCScore = 0;
+    shared_ptr<Node> maxNode = nullptr;
+    
+    for (auto child : childs)
+    {
+        if (child->visitCount > 0)
+        {
+            maxUTCScore = child->GetUCTScore(totalVisitCount);
+            maxNode = child;
+            break;
+        }
+    }
+    
+    for (auto child : childs)
+    {
+        if (child->visitCount > 0 && child->GetUCTScore(totalVisitCount) > maxUTCScore)
+        {
+            maxUTCScore = child->winScore;
+            maxNode = child;
+        }
+    }
+
+    return maxNode;
+}
+
+std::shared_ptr<Node> Node::GetChildWithBestUCTScore(int totalVisitCount, double bestScore, std::function<bool(double, double)> compareFunction)
+{
+    std::list<shared_ptr<Node>> bestNodes;
+    
+    for (auto child : childs)
+    {
+        double childScore = child->GetUCTScore(totalVisitCount);
+        
+        if (compareFunction(childScore, bestScore))
+        {
+            bestNodes.clear();
+            bestNodes.push_back(child);
+            
+            bestScore = childScore;
+            
+            continue;
+        }
+        
+        if (childScore == bestScore)
+        {
+            bestNodes.push_back(child);
+        }
+    }
+    
+    if (bestNodes.size() == 1)
+        return bestNodes.front();
+
+    srand(clock());
+    int randIndex = rand() % bestNodes.size();
+
+    int  i = 0;
+    for (auto it = bestNodes.begin(); it != bestNodes.end(); ++it)
+    {
+        if (i == randIndex)
+        {
+            return *it;
+        }
+
+        ++i;
+    }
+
+    return nullptr;
 }
 
 std::shared_ptr<Node> Node::GetRandomChildNode()
@@ -117,21 +173,25 @@ std::shared_ptr<Node> Node::GetRandomChildNode()
 	return nullptr;
 }
 
-void Node::UpdateWinScore(CellType winner, double updateScore)
+void Node::UpdateWinScore(GameResult result)
 {
-    if (winner == playerType)
-        winScore += updateScore;
+    if (playerType == CellType::WATER)
+    {
+        winScore += result.WaterCount;
+    }
     else
-        winScore -= updateScore;
+    {
+        winScore += result.LandCount;
+    }
 }
 
 double Node::GetUCTScore(int totalVisitCount)
 {
     if (visitCount == 0)
     {
-        return -DBL_MAX; //TODO replace with constant
+        return DBL_MAX; //TODO replace with constant
     }
-
-    return (winScore / (double)visitCount) + 1.41 * sqrt(log(totalVisitCount) / (double)visitCount);
+    
+    return winScore/(double)visitCount + 1.41 * sqrt(log(totalVisitCount) / (double)(visitCount));
 }
 

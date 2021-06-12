@@ -209,19 +209,25 @@ int main()
     field.SetCell(0, 0, CellType::WATER);
     field.SetCell(5, 5, CellType::LAND);
     field.SetCell(0, 1, CellType::CAVITY | CellType::ICE);
+    field.SetCell(0, 4, CellType::CAVITY | CellType::ICE);
+    field.SetCell(3, 2, CellType::CAVITY | CellType::ICE);
     field.SetCell(5, 4, CellType::ROCK | CellType::ICE);
+    field.SetCell(5, 1, CellType::ROCK | CellType::ICE);
+    field.SetCell(2, 3, CellType::ROCK | CellType::ICE);
 
-    shared_ptr<IPlayer> greedyPlayer(new GreedyPlayer(CellType::WATER));
-    shared_ptr<IPlayer> greedy2Player(new GreedyPlayer2(CellType::LAND));
-    shared_ptr<IPlayer> minimaxPlayer(new MiniMaxPlayer(CellType::WATER, 2));
-    shared_ptr<IPlayer> mctsPlayer(new MCTSPlayer(CellType::WATER, std::chrono::duration<int>(10)));
-    shared_ptr<IPlayer> interactivePlayer(new InteractivePlayer(CellType::WATER));
-    shared_ptr<IPlayer> greedy2DifferPlayer(new GreedyPlayer2(CellType::WATER, DifferenceScoreFunction));
+    shared_ptr<IPlayer> greedyPlayerWater(new GreedyPlayer(CellType::WATER));
+    shared_ptr<IPlayer> greedy2PlayerLand(new GreedyPlayer2(CellType::LAND));
+    shared_ptr<IPlayer> greedy2PlayerWater(new GreedyPlayer2(CellType::WATER));
+    shared_ptr<IPlayer> minimaxPlayerWater(new MiniMaxPlayer(CellType::WATER, 4));
+    shared_ptr<IPlayer> minimaxPlayerLand(new MiniMaxPlayer(CellType::LAND, 2));
+    shared_ptr<IPlayer> mctsPlayerLand(new MCTSPlayer(CellType::LAND, std::chrono::duration<int>(15)));
+    shared_ptr<IPlayer> interactivePlayerWater(new InteractivePlayer(CellType::WATER));
+    shared_ptr<IPlayer> greedy2DifferPlayerWater(new GreedyPlayer2(CellType::WATER, DifferenceScoreFunction));
 
     //RunInteractiveGame(field, CellType::LAND, interactivePlayer);
     
-    GetStatistic(10, field, greedy2Player, minimaxPlayer, CellType::WATER, true, false);
-    GetStatisticAsync(10, field, greedy2Player, minimaxPlayer, CellType::WATER, true, false);
+    GetStatistic(1, field, mctsPlayerLand, greedy2PlayerWater, CellType::WATER, true, true);
+//    GetStatisticAsync(5, field, mctsPlayerLand, greedy2PlayerWater, CellType::WATER, true, false);
     //test();
     //DebugMiniMax();
 }
