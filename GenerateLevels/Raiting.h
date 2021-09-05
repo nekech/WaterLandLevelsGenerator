@@ -36,9 +36,11 @@ public:
         mPlayers.push_back(player);
     }
     
-    void ComputeRaiting();
+    void ComputeRaiting(std::string fileName = "");
     
     void PrintRaiting();
+    
+    void SaveToFile(std::string fileName);
 };
 
 #endif /* GenerateRaiting_h */

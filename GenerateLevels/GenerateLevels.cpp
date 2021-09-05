@@ -100,17 +100,27 @@ int main()
     //**********************COMPUTE RAITING**************************************************
     
     
-    shared_ptr<IPlayer> minimaxPlayerWater2(new MiniMaxPlayer(CellType::WATER, 2));
-    shared_ptr<IPlayer> minimaxPlayerWater3(new MiniMaxPlayer(CellType::WATER, 3));
-    shared_ptr<IPlayer> minimaxPlayerWater4(new MiniMaxPlayer(CellType::WATER, 4));
+    shared_ptr<IPlayer> minimaxPlayer2(new MiniMaxPlayer(CellType::WATER, 2));
+    shared_ptr<IPlayer> minimaxPlayer3(new MiniMaxPlayer(CellType::WATER, 3));
+    shared_ptr<IPlayer> minimaxPlayer4(new MiniMaxPlayer(CellType::WATER, 4));
+    
+    shared_ptr<IPlayer> mctsPlayer5(new MCTSPlayer(CellType::LAND, std::chrono::duration<int>(5)));
+    shared_ptr<IPlayer> mctsPlayer15(new MCTSPlayer(CellType::LAND, std::chrono::duration<int>(15)));
+    shared_ptr<IPlayer> mctsPlayer20(new MCTSPlayer(CellType::LAND, std::chrono::duration<int>(20)));
+    shared_ptr<IPlayer> mctsPlayer25(new MCTSPlayer(CellType::LAND, std::chrono::duration<int>(25)));
     
     Raiting raitingT1(field, 10);
     
     raitingT1.AddPlayer(greedyPlayerWater);
     raitingT1.AddPlayer(greedy2PlayerWater);
-    raitingT1.AddPlayer(minimaxPlayerWater2);
-    raitingT1.AddPlayer(minimaxPlayerWater3);
-    raitingT1.AddPlayer(minimaxPlayerWater4);
+    raitingT1.AddPlayer(minimaxPlayer2);
+    raitingT1.AddPlayer(minimaxPlayer3);
+    raitingT1.AddPlayer(minimaxPlayer4);
+    
+    raitingT1.AddPlayer(mctsPlayer5);
+    raitingT1.AddPlayer(mctsPlayer15);
+    raitingT1.AddPlayer(mctsPlayer20);
+    raitingT1.AddPlayer(mctsPlayer25);
     
     raitingT1.ComputeRaiting();
     

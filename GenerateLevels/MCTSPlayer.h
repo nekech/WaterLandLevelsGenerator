@@ -2,6 +2,8 @@
 #define MCTS_PLAYER
 #pragma once
 
+#include <chrono>
+
 #include "IPlayer.h"
 
 class MCTSPlayer : public IPlayer
