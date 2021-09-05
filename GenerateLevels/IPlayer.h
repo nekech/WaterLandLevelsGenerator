@@ -14,6 +14,8 @@ public:
     
 	CellType playerType;
     
+    std::string playerName = "IPlayer";
+    
     ScoreFunction GetScore = DefaultGetScore;
     
     IPlayer(const CellType& playerType) :playerType(playerType)

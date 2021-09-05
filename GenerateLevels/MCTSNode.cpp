@@ -37,8 +37,8 @@ void Node::ComputeChilds()
 GameResult Node::RandomPlayout()
 {
     GameResult result;
-    
-    if (isTerminal)
+     
+    if (isTerminal || true) //TODO remove true
     {
         result.WaterCount = field.GetCellTypeCount(CellType::WATER);
         result.LandCount = field.GetCellTypeCount(CellType::LAND);
@@ -178,10 +178,14 @@ void Node::UpdateWinScore(GameResult result)
     if (playerType == CellType::WATER)
     {
         winScore += result.WaterCount;
+        //winScore += result.WaterCount - result.LandCount;
+        //winScore += result.WaterCount > result.LandCount ? 1 : 0;
     }
     else
     {
         winScore += result.LandCount;
+        //winScore += result.LandCount - result.WaterCount;
+        //winScore += result.LandCount > result.WaterCount ? 1 : 0;
     }
 }
 

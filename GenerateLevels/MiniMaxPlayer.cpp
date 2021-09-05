@@ -7,6 +7,7 @@
 
 MiniMaxPlayer::MiniMaxPlayer(CellType playerType, int depth) :IPlayer(playerType), depth(depth)
 {
+    playerName = "MiniMax Player " + std::to_string(depth);
 }
 
 Step MiniMaxPlayer::GetStep(const GameField& field) //TODO add threads

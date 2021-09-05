@@ -7,6 +7,7 @@
 
 RandomPlayer::RandomPlayer(CellType playerType) :IPlayer(playerType)
 {
+    playerName = "Random Player";
 }
 
 Step RandomPlayer::GetStep(const GameField& field)

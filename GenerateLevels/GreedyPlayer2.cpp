@@ -4,10 +4,12 @@
 
 GreedyPlayer2::GreedyPlayer2(CellType playerType) :IPlayer(playerType)
 {
+    playerName = "Greedy Player2";
 }
 
 GreedyPlayer2::GreedyPlayer2(CellType playerType, IPlayer::ScoreFunction scoreFunction):IPlayer(playerType, scoreFunction)
 {
+    playerName = "Greedy Player2";
 }
 
 Step GreedyPlayer2::GetStep(const GameField& field)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F2EB07526E39800009E27D1 /* Statistic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F2EB07426E39800009E27D1 /* Statistic.cpp */; };
+		7F2EB07726E3A002009E27D1 /* Raiting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F2EB07626E3A002009E27D1 /* Raiting.cpp */; };
 		7F5369E52653C73B00F9B923 /* ThreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F5369E42653C73B00F9B923 /* ThreadPool.cpp */; };
 		7FBEA6E4263435D300EF0BA3 /* MCTSTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6E2263435D300EF0BA3 /* MCTSTree.cpp */; };
 		7FBEA6E5263435D300EF0BA3 /* MCTSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FBEA6E3263435D300EF0BA3 /* MCTSNode.cpp */; };
@@ -36,6 +38,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F2EB07326E39481009E27D1 /* Statistic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Statistic.h; path = ../../../GenerateLevels/Statistic.h; sourceTree = "<group>"; };
+		7F2EB07426E39800009E27D1 /* Statistic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Statistic.cpp; path = ../../../GenerateLevels/Statistic.cpp; sourceTree = "<group>"; };
+		7F2EB07626E3A002009E27D1 /* Raiting.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Raiting.cpp; path = ../../../GenerateLevels/Raiting.cpp; sourceTree = "<group>"; };
+		7F2EB07826E4B98F009E27D1 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = ../../../GenerateLevels/Level.h; sourceTree = "<group>"; };
 		7F5369E32653C72500F9B923 /* ThreadPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadPool.h; path = ../../../GenerateLevels/ThreadPool.h; sourceTree = "<group>"; };
 		7F5369E42653C73B00F9B923 /* ThreadPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ThreadPool.cpp; path = ../../../GenerateLevels/ThreadPool.cpp; sourceTree = "<group>"; };
 		7FBEA6B92634175D00EF0BA3 /* GenerateLevels */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GenerateLevels; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +73,7 @@
 		7FBEA70E2634365500EF0BA3 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../../../GenerateLevels/Game.h; sourceTree = "<group>"; };
 		7FBEA70F2634365500EF0BA3 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector2.h; path = ../../../GenerateLevels/Vector2.h; sourceTree = "<group>"; };
 		7FBEA7102634365500EF0BA3 /* GameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameField.h; path = ../../../GenerateLevels/GameField.h; sourceTree = "<group>"; };
+		7FFE6FB326E22BFC007A9F9F /* Raiting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Raiting.h; path = ../../../GenerateLevels/Raiting.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +115,7 @@
 		7FBEA6D8263433EC00EF0BA3 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				7F2EB07826E4B98F009E27D1 /* Level.h */,
 				7F5369E32653C72500F9B923 /* ThreadPool.h */,
 				7FBEA70D2634365500EF0BA3 /* EnumBitOperations.h */,
 				7FBEA70E2634365500EF0BA3 /* Game.h */,
@@ -115,6 +123,8 @@
 				7FBEA70C2634365500EF0BA3 /* Step.h */,
 				7FBEA70F2634365500EF0BA3 /* Vector2.h */,
 				7FBEA6DE263434DA00EF0BA3 /* players */,
+				7FFE6FB326E22BFC007A9F9F /* Raiting.h */,
+				7F2EB07326E39481009E27D1 /* Statistic.h */,
 			);
 			name = headers;
 			sourceTree = "<group>";
@@ -129,6 +139,8 @@
 				7FBEA6FB2634360F00EF0BA3 /* GenerateLevels.cpp */,
 				7FBEA6F92634360F00EF0BA3 /* Step.cpp */,
 				7FBEA6DF263434E500EF0BA3 /* players */,
+				7F2EB07426E39800009E27D1 /* Statistic.cpp */,
+				7F2EB07626E3A002009E27D1 /* Raiting.cpp */,
 			);
 			name = sources;
 			sourceTree = "<group>";
@@ -242,10 +254,12 @@
 				7FBEA6E4263435D300EF0BA3 /* MCTSTree.cpp in Sources */,
 				7FBEA6FE2634360F00EF0BA3 /* Step.cpp in Sources */,
 				7FBEA6FF2634360F00EF0BA3 /* GameCell.cpp in Sources */,
+				7F2EB07526E39800009E27D1 /* Statistic.cpp in Sources */,
 				7FBEA6E5263435D300EF0BA3 /* MCTSNode.cpp in Sources */,
 				7FBEA6F4263435F500EF0BA3 /* GreedyPlayer.cpp in Sources */,
 				7FBEA6F1263435F500EF0BA3 /* InteractivePlayer.cpp in Sources */,
 				7FBEA6EF263435F500EF0BA3 /* RandomPlayer.cpp in Sources */,
+				7F2EB07726E3A002009E27D1 /* Raiting.cpp in Sources */,
 				7FBEA6FC2634360F00EF0BA3 /* Game.cpp in Sources */,
 				7FBEA6F5263435F500EF0BA3 /* MCTSPlayer.cpp in Sources */,
 				7F5369E52653C73B00F9B923 /* ThreadPool.cpp in Sources */,
@@ -290,6 +304,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"COPY_HEADERS_UNIFDEF_FLAGS[sdk=*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -308,6 +323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "/opt/homebrew/Cellar/nlohmann-json/3.10.0/include/";
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -361,6 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "/opt/homebrew/Cellar/nlohmann-json/3.10.0/include/";
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

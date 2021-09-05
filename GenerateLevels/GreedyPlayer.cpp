@@ -4,6 +4,7 @@
 
 GreedyPlayer::GreedyPlayer(CellType playerType) :IPlayer(playerType)
 {
+    playerName = "Greedy Player";
 }
 
 Step GreedyPlayer::GetStep(const GameField& field)
