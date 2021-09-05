@@ -11,6 +11,9 @@ set(Header_Files
     "IPlayer.h"
     "Step.h"
     "Vector2.h"
+    "ThreadPool.h"
+    "Raiting.h"
+    "Statistic.h"
 )
 source_group("Header Files" FILES ${Header_Files})
 
@@ -19,7 +22,6 @@ set(Header_Files__Players
     "GreedyPlayer2.h"
     "InteractivePlayer.h"
     "MCTSPlayer.h"
-    "MiniMaxModifiedPlayer.h"
     "MiniMaxPlayer.h"
     "RandomPlayer.h"
 )
@@ -36,6 +38,9 @@ set(Source_Files
     "GameCell.cpp"
     "GameField.cpp"
     "Step.cpp"
+    "ThreadPool.cpp"
+    "Statistic.cpp"
+    "Raiting.cpp"
 )
 source_group("Source Files" FILES ${Source_Files})
 
@@ -44,7 +49,6 @@ set(Source_Files__Players
     "GreedyPlayer2.cpp"
     "InteractivePlayer.cpp"
     "MCTSPlayer.cpp"
-    "MiniMaxModifiedPlayer.cpp"
     "MiniMaxPlayer.cpp"
     "RandomPlayer.cpp"
 )
